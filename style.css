@@ -1,7 +1,6 @@
 
 /* ==========================================================
-   APPLE INSPIRED LANDING PAGE
-   style.css - Part 1
+   style.css 
 ========================================================== */
 
 /* ===========================
@@ -16,22 +15,6 @@
 
 :root{
 
-    /* --primary:#0071e3;
-    --primary-hover:#2997ff;
-
-    --text:#1d1d1f;
-    --text-light:#6e6e73;
-
-    --background:#f5f5f7;
-
-    --glass:rgba(255,255,255,.72);
-
-    --border:rgba(255,255,255,.45);
-
-    --shadow:
-        0 20px 60px rgba(0,0,0,.08);
-
-    --radius:28px; */
     --primary:#C026D3;
     --primary-hover:#A855F7;
 
@@ -62,19 +45,7 @@
 
 body.dark{
 
-    /* --background:#0b0b0f;
-
-    --text:#ffffff;
-
-    --text-light:#c7c7cc;
-
-    --glass:rgba(25,25,28,.70);
-
-    --border:rgba(255,255,255,.08);
-
-    --shadow:
-        0 20px 60px rgba(0,0,0,.45); */
-        --background:#09090b;
+     --background:#09090b;
 
     --text:#ffffff;
 
@@ -340,6 +311,141 @@ font-size:1.3rem;
     letter-spacing:1px;
 }
 
+
+/* ===========================
+   COLLEGE & Department NAME Text Animation
+=========================== */
+
+.college-name{
+
+    margin:20px 0 35px;
+
+    overflow:hidden;
+
+}
+
+.college-name span{
+
+    display:inline-block;
+
+    font-size:2.5rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        90deg,
+        #FF4D9D,
+        #C026D3,
+        #8B5CF6,
+        #FF4D9D
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+
+        textReveal 1.8s ease forwards,
+
+        gradientFlow 6s linear infinite;
+
+    opacity:0;
+
+}
+
+@keyframes textReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes gradientFlow{
+
+    0%{
+
+        background-position:0%;
+
+    }
+
+    100%{
+
+        background-position:300%;
+
+    }
+
+}
+
+
+
+.department-name{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+
+        0 0 10px rgba(255,77,157,.5),
+
+        0 0 25px rgba(192,38,211,.5),
+
+        0 0 40px rgba(168,85,247,.4);
+
+    animation:
+
+        glowText 3s ease-in-out infinite;
+
+}
+
+@keyframes glowText{
+
+    0%,100%{
+
+        text-shadow:
+
+        0 0 10px rgba(255,77,157,.3),
+
+        0 0 20px rgba(192,38,211,.3);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 20px rgba(255,77,157,.8),
+
+        0 0 40px rgba(192,38,211,.8),
+
+        0 0 60px rgba(168,85,247,.8);
+
+    }
+
+}
+
+
 /* ===========================
    MAIN TITLE
 =========================== */
@@ -521,7 +627,6 @@ h1{
 
 
 /* ==========================================================
-   style.css - Part 2
    Countdown, Features, Button & Footer
 ========================================================== */
 
@@ -674,49 +779,6 @@ h1{
    CTA BUTTON
 =========================== */
 
-/* .button{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:18px 42px;
-
-    border-radius:999px;
-
-    text-decoration:none;
-
-    background:linear-gradient(
-        135deg,
-        #0071e3,
-        #42a5ff
-    );
-
-    color:#fff;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    box-shadow:
-        0 20px 50px rgba(0,113,227,.35);
-
-    transition:.35s;
-
-}
-
-.button:hover{
-
-    transform:
-        translateY(-6px)
-        scale(1.04);
-
-    box-shadow:
-        0 28px 70px rgba(0,113,227,.45);
-
-} */
  .button{
 
     display:inline-flex;
