@@ -1,0 +1,368 @@
+/*=========================================================
+    TRAINING PROGRAMME RULES
+=========================================================*/
+
+.rules-section{
+
+    max-width:1400px;
+
+    margin:120px auto;
+
+    padding:20px;
+
+}
+
+/*=========================================================
+    GRID
+=========================================================*/
+
+.rules-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+/*=========================================================
+    CARD
+=========================================================*/
+
+.rule-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--card-border);
+
+    backdrop-filter:blur(20px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/* Top Gradient */
+
+.rule-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #FF4D9D,
+        #C026D3,
+        #8B5CF6
+    );
+
+}
+
+/* Glow Hover */
+
+.rule-card:hover{
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(192,38,211,.25);
+
+    border-color:rgba(255,255,255,.25);
+
+}
+
+/*=========================================================
+    RULE NUMBER
+=========================================================*/
+
+.rule-number{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+    background:linear-gradient(
+        135deg,
+        #FF4D9D,
+        #C026D3,
+        #8B5CF6
+    );
+
+    box-shadow:
+        0 0 20px rgba(192,38,211,.35);
+
+}
+
+/*=========================================================
+    TITLES
+=========================================================*/
+
+.rule-card h3{
+
+    font-size:1.45rem;
+
+    color:var(--text-color);
+
+    margin-bottom:15px;
+
+}
+
+/*=========================================================
+    DESCRIPTION
+=========================================================*/
+
+.rule-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+}
+
+/*=========================================================
+    EMPHASIS
+=========================================================*/
+
+.rule-card strong{
+
+    color:#FF4D9D;
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    CATEGORY COLORS
+=========================================================*/
+
+/* Mandatory */
+
+.rule-card.mandatory{
+
+    border-left:5px solid #EF4444;
+
+}
+
+.rule-card.mandatory .rule-number{
+
+    background:linear-gradient(
+        135deg,
+        #EF4444,
+        #F87171
+    );
+
+}
+
+/* Important */
+
+.rule-card.important{
+
+    border-left:5px solid #F59E0B;
+
+}
+
+.rule-card.important .rule-number{
+
+    background:linear-gradient(
+        135deg,
+        #F59E0B,
+        #FBBF24
+    );
+
+}
+
+/* Academic */
+
+.rule-card.academic{
+
+    border-left:5px solid #8B5CF6;
+
+}
+
+.rule-card.academic .rule-number{
+
+    background:linear-gradient(
+        135deg,
+        #8B5CF6,
+        #C026D3
+    );
+
+}
+
+/*=========================================================
+    FLOATING EFFECT
+=========================================================*/
+
+.rule-card:nth-child(odd){
+
+    animation:floatRule 7s ease-in-out infinite;
+
+}
+
+.rule-card:nth-child(even){
+
+    animation:floatRule 8s ease-in-out infinite;
+
+}
+
+@keyframes floatRule{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/*=========================================================
+    LIGHT THEME
+=========================================================*/
+
+body.light-theme .rule-card{
+
+    background:rgba(255,255,255,.92);
+
+    border:1px solid #E7E7E7;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.08);
+
+}
+
+body.light-theme .rule-card:hover{
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+body.light-theme .rule-card h3{
+
+    color:#222;
+
+}
+
+body.light-theme .rule-card p{
+
+    color:#555;
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+.rules-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.rules-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.rule-card{
+
+    padding:25px;
+
+}
+
+.rule-number{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:1.1rem;
+
+}
+
+.rule-card h3{
+
+    font-size:1.3rem;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.rules-section{
+
+    margin:80px auto;
+
+}
+
+.rule-card{
+
+    padding:20px;
+
+}
+
+.rule-card p{
+
+    font-size:.95rem;
+
+}
+
+}
