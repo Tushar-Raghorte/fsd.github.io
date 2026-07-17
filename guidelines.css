@@ -1,0 +1,395 @@
+/*=========================================================
+    CODING GUIDELINES
+=========================================================*/
+
+.guidelines-section{
+
+    max-width:1400px;
+
+    margin:120px auto;
+
+    padding:20px;
+
+}
+
+/*==============================
+    GRID
+==============================*/
+
+.guideline-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+/*==============================
+    CARD
+==============================*/
+
+.guide-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--card-border);
+
+    backdrop-filter:blur(20px);
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease,
+
+        border-color .35s ease;
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.12);
+
+}
+
+/* Gradient Accent */
+
+.guide-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #FF4D9D,
+
+        #C026D3,
+
+        #8B5CF6
+
+    );
+
+}
+
+/* Glow */
+
+.guide-card:hover{
+
+    transform:
+
+        translateY(-10px);
+
+    border-color:rgba(255,255,255,.25);
+
+    box-shadow:
+
+        0 25px 60px rgba(192,38,211,.25);
+
+}
+
+/*==============================
+    ICON
+==============================*/
+
+.guide-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #FF4D9D,
+
+        #C026D3,
+
+        #8B5CF6
+
+    );
+
+    color:#fff;
+
+    box-shadow:
+
+        0 0 25px rgba(192,38,211,.35);
+
+}
+
+/*==============================
+    TITLE
+==============================*/
+
+.guide-card h3{
+
+    font-size:1.45rem;
+
+    margin-bottom:15px;
+
+    color:var(--text-color);
+
+}
+
+/*==============================
+    DESCRIPTION
+==============================*/
+
+.guide-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+}
+
+/*=========================================================
+    RESOURCE SECTION
+=========================================================*/
+
+.resources-section{
+
+    margin-top:90px;
+
+    text-align:center;
+
+}
+
+.resources-section h3{
+
+    font-size:2rem;
+
+    margin-bottom:40px;
+
+    color:var(--text-color);
+
+}
+
+.resource-links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+/*==============================
+    RESOURCE BUTTON
+==============================*/
+
+.resource-links a{
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:40px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--card-border);
+
+    color:var(--text-color);
+
+    font-weight:600;
+
+    transition:.35s;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.resource-links a:hover{
+
+    color:#fff;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #FF4D9D,
+
+        #C026D3,
+
+        #8B5CF6
+
+    );
+
+    transform:
+
+        translateY(-4px);
+
+    box-shadow:
+
+        0 18px 40px rgba(192,38,211,.30);
+
+}
+
+/*=========================================================
+    FLOAT ANIMATION
+=========================================================*/
+
+.guide-card:nth-child(odd){
+
+    animation:floatGuide 7s ease-in-out infinite;
+
+}
+
+.guide-card:nth-child(even){
+
+    animation:floatGuide 8s ease-in-out infinite;
+
+}
+
+@keyframes floatGuide{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+/*=========================================================
+    LIGHT THEME
+=========================================================*/
+
+body.light-theme .guide-card{
+
+    background:rgba(255,255,255,.92);
+
+    border:1px solid #E7E7E7;
+
+}
+
+body.light-theme .resource-links a{
+
+    background:#fff;
+
+    border:1px solid #E7E7E7;
+
+}
+
+body.light-theme .guide-card:hover{
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.08);
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+.guideline-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.guideline-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.guide-card{
+
+    padding:25px;
+
+}
+
+.guide-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:1.7rem;
+
+}
+
+.resources-section h3{
+
+    font-size:1.7rem;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.resource-links{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.resource-links a{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+}
