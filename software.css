@@ -219,13 +219,13 @@
 
     margin-bottom:15px;
 
-    color:white;
+    color:var(--text);
 
 }
 
 .software-card p{
 
-    color:rgba(255,255,255,.72);
+    color:var(--text-light);
 
     line-height:1.8;
 
